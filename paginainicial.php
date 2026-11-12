@@ -1,4 +1,3 @@
-
 <?php
 $pagina = $_GET['pagina'] ?? 'academia';
 
@@ -25,9 +24,13 @@ $eventos = [
 
 $produtos = [
     ['nome' => 'Camisa Dry Fit', 'preco' => '89,90', 'icone' => '👕'],
-    ['nome' => 'Chuteira Campo', 'preco' => '299,90', 'icone' => '👟'],
-    ['nome' => 'Tênis Running', 'preco' => '349,90', 'icone' => '👟'],
-    ['nome' => 'Bola de Futebol', 'preco' => '129,90', 'icone' => '⚽']
+    ['nome' => 'Shorts de Treino', 'preco' => ',90', 'icone' => '👖'],
+    ['nome' => 'Chuteira Campo Sintético', 'preco' => '120,00', 'icone' => '👟'],
+    ['nome' => 'Chuteira de Futsal', 'preco' => '50,00', 'icone' => '👟'],
+    ['nome' => 'Tênis de Esteira', 'preco' => '100,00', 'icone' => '👟'],
+    ['nome' => 'Bola de Futebol', 'preco' => '50,00', 'icone' => '⚽'],
+    ['nome' => 'Bola de Vôlei', 'preco' => '50,00', 'icone' => '🏐'],
+    ['nome' => 'Bola de Basquete', 'preco' => '50,00', 'icone' => '🏀']
 ];
 
 $mensagem = '';
@@ -103,7 +106,7 @@ function h($valor) {
         </div>
     </section>
 
-    <h2 class="titulo-secao">Equipamentos em destaque</h2>
+    <h2 class="titulo-secao">Equipamentos em destaque na SportPlex</h2>
 
     <section class="grade">
         <article class="card">
@@ -122,12 +125,12 @@ function h($valor) {
         </article>
     </section>
 
-    <a href="?pagina=aulas" class="botao">Conhecer as aulas</a>
+    <a href="?pagina=aulas" class="botao">Conheça as aulas</a>
 
 <?php elseif ($pagina === 'aulas'): ?>
 
     <h1>Aulas</h1>
-    <p class="subtitulo">Escolha sua atividade favorita.</p>
+    <p class="subtitulo">Escolha sua atividade favorita para treinar.</p>
 
     <section class="lista">
 
@@ -139,7 +142,7 @@ function h($valor) {
                     <h3><?= h($aula['nome']) ?></h3>
                     <p>Prof. <?= h($aula['professor']) ?></p>
                     <p><?= h($aula['horario']) ?></p>
-                    <small><?= h($aula['vagas']) ?> vagas disponíveis</small>
+                    <small><?= h($aula['vagas']) ?> Vagas disponíveis</small>
                 </div>
 
                 <a href="?pagina=aulas" class="botao pequeno">
@@ -166,7 +169,7 @@ function h($valor) {
                 <div class="info">
                     <h3><?= h($evento['nome']) ?></h3>
                     <p><?= h($evento['data']) ?> às <?= h($evento['hora']) ?></p>
-                    <small>Inscrições abertas</small>
+                    <small>Inscrições abertas todos os dias</small>
                 </div>
             </article>
         <?php endforeach; ?>
@@ -174,13 +177,13 @@ function h($valor) {
     </section>
 
     <button class="botao" onclick="alert('Inscrição solicitada!')">
-        Inscrever equipe
+        Clique aqui para se inscrever no próximo evento
     </button>
 
 <?php elseif ($pagina === 'loja'): ?>
 
     <h1>Loja SportPlex</h1>
-    <p class="subtitulo">Encontre produtos para seus treinos.</p>
+    <p class="subtitulo">Encontre vários produtos para seus treinos diários.</p>
 
     <input type="search" id="busca" placeholder="Buscar produtos..." class="pesquisa">
 
@@ -197,7 +200,7 @@ function h($valor) {
                 <p class="preco">R$ <?= h($produto['preco']) ?></p>
 
                 <button class="botao"
-                    onclick="alert('Produto adicionado ao carrinho!')">
+                    onclick="alert('Produto adicionado com sucesso ao carrinho!')">
                     Comprar
                 </button>
             </article>
@@ -208,7 +211,7 @@ function h($valor) {
 <?php elseif ($pagina === 'gourmet'): ?>
 
     <h1>Espaço Gourmet</h1>
-    <p class="subtitulo">Um ambiente especial para reunir os amigos.</p>
+    <p class="subtitulo">Um ambiente especial para reunir os amigos enquanto vocês almoçam ou jantam.</p>
 
     <section class="banner gourmet">
         <div>
@@ -231,10 +234,10 @@ function h($valor) {
 
     <form method="POST" class="formulario">
 
-        <label>Selecione a data</label>
+        <label>Selecione a dia e o mês</label>
         <input type="date" name="data" required>
 
-        <label>Selecione o horário</label>
+        <label>Selecione o horário para o seu almoço ou jantar</label>
         <select name="horario" required>
             <option value="">Escolha um horário</option>
             <option value="12:00">12:00 - 15:00</option>
@@ -264,7 +267,8 @@ function h($valor) {
 </main>
 
 <footer>
-    <p> 2026 SportPlex | Mais que esporte, um estilo de vida.</p>
+    <p> 2026 SportPlex | Site feito pelo: Igor, Ronny, Matheus Miranda, Gabriel Brey, Bernardo, Vitoria, Luis Henrique e Murilo Schimidt.
+    </p>
 </footer>
 
 </body>
