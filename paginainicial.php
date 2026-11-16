@@ -24,7 +24,7 @@ $eventos = [
 
 $produtos = [
     ['nome' => 'Camisa Dry Fit', 'preco' => '89,90', 'icone' => '👕'],
-    ['nome' => 'Shorts de Treino', 'preco' => ',90', 'icone' => '👖'],
+    ['nome' => 'Shorts de Treino', 'preco' => '59,90', 'icone' => '👖'],
     ['nome' => 'Chuteira Campo Sintético', 'preco' => '120,00', 'icone' => '👟'],
     ['nome' => 'Chuteira de Futsal', 'preco' => '50,00', 'icone' => '👟'],
     ['nome' => 'Tênis de Esteira', 'preco' => '100,00', 'icone' => '👟'],
@@ -222,15 +222,6 @@ function h($valor) {
 
     <h2 class="titulo-secao">Faça sua reserva</h2>
 
-    <nav>
-
-    <a href="login.php">Login</a>
-    <a href="cadastro.php">Cadastro</a>
-    <a href="reservar.php">Reservar Quadra</a>
-    <a href="logout.php">Sair</a>
-
-</nav>
-
 
     <form method="POST" class="formulario">
 
@@ -270,6 +261,35 @@ function h($valor) {
     <p> 2026 SportPlex | Site feito pelo: Igor, Ronny, Matheus Miranda, Gabriel Brey, Bernardo, Vitoria, Luis Henrique e Murilo Schimidt.
     </p>
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const busca = document.getElementById("busca");
+    const produtos = document.querySelectorAll(".card-produto");
+
+    if (!busca) return;
+
+    busca.addEventListener("input", function () {
+
+        const pesquisa = busca.value.toLowerCase().trim();
+
+        produtos.forEach(function (produto) {
+
+            const nome = produto.textContent.toLowerCase();
+
+            if (nome.includes(pesquisa)) {
+                produto.style.display = "";
+            } else {
+                produto.style.display = "none";
+            }
+
+        });
+
+    });
+
+});
+</script>
 
 </body>
 </html>
