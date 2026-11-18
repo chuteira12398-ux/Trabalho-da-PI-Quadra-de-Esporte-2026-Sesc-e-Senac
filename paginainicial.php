@@ -1,4 +1,8 @@
 <?php
+
+require_once 'conexao.php';
+
+$pagina = $_GET['pagina'] ?? 'academia';
 $pagina = $_GET['pagina'] ?? 'academia';
 
 $menu = [
@@ -32,6 +36,10 @@ $produtos = [
     ['nome' => 'Bola de Vôlei', 'preco' => '50,00', 'icone' => '🏐'],
     ['nome' => 'Bola de Basquete', 'preco' => '50,00', 'icone' => '🏀']
 ];
+
+$comidas = $pdo->query(
+    "SELECT * FROM comidas ORDER BY categoria, nome"
+)->fetchAll(PDO::FETCH_ASSOC);
 
 $mensagem = '';
 
