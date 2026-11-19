@@ -83,6 +83,12 @@ function h($valor) {
     </nav>
 </header>
 
+<div class="botoes-acesso">
+    <a href="cadastro.php" class="btn-verde">Criar conta</a>
+
+    <a href="login.php" class="btn-verde">Entrar</a>
+</div>
+
 <main class="container">
 
 <?php if ($pagina === 'academia'): ?>
@@ -298,6 +304,75 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const botoes = document.querySelectorAll(
+        "button, a, input[type='submit'], input[type='button']"
+    );
+
+    botoes.forEach(function (botao) {
+
+        botao.style.transition = "all 0.3s ease";
+
+        botao.addEventListener("mouseenter", function () {
+            botao.style.transform = "translateY(-4px) scale(1.04)";
+            botao.style.boxShadow = "0 8px 18px rgba(32, 63, 155, 0.25)";
+        });
+
+        botao.addEventListener("mouseleave", function () {
+            botao.style.transform = "translateY(0) scale(1)";
+            botao.style.boxShadow = "none";
+        });
+
+        botao.addEventListener("click", function () {
+            botao.style.transform = "scale(0.95)";
+
+            setTimeout(function () {
+                botao.style.transform = "";
+            }, 180);
+        });
+
+    });
+
+});
+</script>
+
+
+<style>
+.botao-animado {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.botao-animado:hover {
+    transform: translateY(-5px) scale(1.05);
+    background-color: #3159c7;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.botao-animado:active {
+    transform: scale(0.94);
+}
+</style>
+
+<script>
+document.querySelectorAll(".botao-animado").forEach(botao => {
+    botao.addEventListener("click", function() {
+        this.animate(
+            [
+                { transform: "scale(1)" },
+                { transform: "scale(0.92)" },
+                { transform: "scale(1)" }
+            ],
+            { duration: 250 }
+        );
+    });
+});
+</script>
+
 
 </body>
 </html>

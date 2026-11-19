@@ -372,3 +372,42 @@ footer {
     display: block;
     margin: 0 auto 15px;
 }
+
+
+/* ANIMAÇÕES DOS BOTÕES SPORTPLEX */
+
+button,
+.botao,
+.btn,
+a.botao {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efeito ao passar o mouse */
+button:hover,
+.botao:hover,
+.btn:hover,
+a.botao:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 18px rgba(32, 63, 155, 0.25);
+    filter: brightness(1.08);
+}
+
+/* Efeito ao clicar */
+button:active,
+.botao:active,
+.btn:active,
+a.botao:active {
+    transform: scale(0.96);
+    box-shadow: none;
+}
+
+/* Efeito de foco */
+button:focus-visible,
+.botao:focus-visible,
+.btn:focus-visible,
+a.botao:focus-visible {
+    outline: 3px solid #6b91ff;
+    outline-offset: 3px;
+}

@@ -1,27 +1,22 @@
-
 <?php
-
 session_start();
 
-$host = "127.0.0.1";
+$host = "localhost";
 $banco = "sportplex";
 $usuario = "root";
 $senha = "root";
 
 try {
-
     $pdo = new PDO(
-        "mysql:host=$host;port=3306;dbname=$banco;charset=utf8mb4",
+        "mysql:host=$host;dbname=$banco;charset=utf8mb4",
         $usuario,
-        $senha,
-        [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-        ]
+        $senha
     );
 
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
 } catch (PDOException $e) {
-
-    die("Não foi possível conectar ao MySQL: " . $e->getMessage());
-
+    die("Erro na conexão com o banco de dados.");
 }
+?>
