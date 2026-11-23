@@ -103,22 +103,26 @@ function h($valor) {
         </div>
     </section>
 
-    <section class="indicadores">
-        <div class="indicador">
-            <h2>+50</h2>
-            <p>Equipamentos</p>
-        </div>
+   
+<div class="indicadores">
 
-        <div class="indicador">
-            <h2>35%</h2>
-            <p>Ocupação</p>
-        </div>
+    <div class="indicador">
+        <h2>35%</h2>
+        <p>Ocupação</p>
+        <a href="ocupacoes.php" class="btn-indicador">
+            Ver ocupações
+        </a>
+    </div>
 
-        <div class="indicador">
-            <h2>Premium</h2>
-            <p>Plano</p>
-        </div>
-    </section>
+    <div class="indicador">
+        <h2>Premium</h2>
+        <p>Plano</p>
+        <a href="planos.php" class="btn-indicador">
+            Ver planos
+        </a>
+    </div>
+
+</div>
 
     <h2 class="titulo-secao">Equipamentos em destaque na SportPlex</h2>
 

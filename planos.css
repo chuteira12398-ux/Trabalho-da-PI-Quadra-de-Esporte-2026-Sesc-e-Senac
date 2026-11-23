@@ -1,0 +1,140 @@
+
+/* CONFIGURAÇÃO GERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f5fc;
+    color: #172b50;
+}
+
+/* CABEÇALHO */
+
+.cabecalho-planos {
+    background: #203f9b;
+    color: white;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho-planos h1 {
+    font-size: 26px;
+}
+
+/* CONTEÚDO */
+
+.container-planos {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.titulo-planos {
+    color: #203f9b;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.descricao-planos {
+    color: #71809b;
+    font-size: 17px;
+    margin-bottom: 35px;
+}
+
+/* CARTÕES */
+
+.grade-planos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.card-plano {
+    background: white;
+    padding: 30px 22px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    transition: 0.3s ease;
+}
+
+.card-plano:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(32,63,155,0.15);
+}
+
+.card-plano h2 {
+    color: #203f9b;
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+.preco-plano {
+    font-size: 30px;
+    font-weight: bold;
+    color: #3159c7;
+    margin-bottom: 20px;
+}
+
+.card-plano ul {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.card-plano li {
+    padding: 9px 0;
+    color: #526078;
+    border-bottom: 1px solid #edf0f7;
+}
+
+/* BOTÃO */
+
+.btn-plano {
+    display: inline-block;
+    background: #203f9b;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-plano:hover {
+    background: #3159c7;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(32,63,155,0.25);
+}
+
+/* RODAPÉ */
+
+.rodape-planos {
+    text-align: center;
+    padding: 25px;
+    color: #71809b;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+    .grade-planos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .grade-planos {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-planos {
+        font-size: 26px;
+    }
+}

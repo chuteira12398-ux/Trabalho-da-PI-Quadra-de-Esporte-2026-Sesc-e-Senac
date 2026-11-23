@@ -1,0 +1,168 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f6fc;
+    color: #172b4d;
+}
+
+.topo-pagamento {
+    background: #303f98;
+    min-height: 90px;
+    padding: 20px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-pagamento {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.topo-pagamento > a:last-child {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container-pagamento {
+    width: 90%;
+    max-width: 650px;
+    margin: 45px auto;
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.container-pagamento h1 {
+    color: #303f98;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    color: #71809b;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.resumo-plano {
+    background: #f3f6fc;
+    padding: 22px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.resumo-plano h2 {
+    color: #303f98;
+    margin-bottom: 12px;
+}
+
+.resumo-plano p {
+    margin-bottom: 8px;
+}
+
+.resumo-plano strong {
+    color: #4056c5;
+    font-size: 28px;
+}
+
+.container-pagamento form h2 {
+    color: #303f98;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.opcao {
+    display: block;
+    padding: 17px;
+    border: 1px solid #dce2f0;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.opcao:hover {
+    background: #f3f6fc;
+    border-color: #303f98;
+}
+
+.opcao input {
+    margin-right: 10px;
+}
+
+.btn-confirmar {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 22px;
+    background: #303f98;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-confirmar:hover {
+    background: #4056c5;
+    transform: translateY(-3px);
+}
+
+.voltar {
+    margin-top: 15px;
+}
+
+.mensagem {
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.sucesso {
+    background: #e3f7e8;
+    color: #176b32;
+}
+
+.erro {
+    background: #ffe5e5;
+    color: #a32121;
+}
+
+.aviso {
+    color: #71809b;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 25px;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    .container-pagamento {
+        width: 94%;
+        padding: 22px;
+        margin: 25px auto;
+    }
+
+    .topo-pagamento {
+        padding: 18px;
+    }
+
+    .logo-pagamento {
+        font-size: 20px;
+    }
+}
