@@ -1,0 +1,169 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f6fc;
+    color: #172b4d;
+    padding: 35px 20px;
+}
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+}
+
+h1 {
+    color: #303f98;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    color: #71809e;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #303f98;
+    margin: 30px 0 18px;
+}
+
+.quadras {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card-quadra {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.card-quadra:has(input:checked) {
+    border-color: #303f98;
+    background: #f8f9ff;
+}
+
+.card-quadra input {
+    width: 18px;
+    height: 18px;
+    accent-color: #303f98;
+}
+
+.icone {
+    font-size: 45px;
+}
+
+.card-quadra strong {
+    color: #303f98;
+    font-size: 20px;
+}
+
+.card-quadra span:not(.icone) {
+    color: #299c4b;
+    font-weight: bold;
+}
+
+.card-quadra small {
+    color: #71809e;
+    font-size: 14px;
+}
+
+.campos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.campos label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.campos input,
+.campos select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dce2f0;
+    border-radius: 9px;
+    background: white;
+    font-size: 15px;
+}
+
+.opcoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.opcoes label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.opcoes input {
+    accent-color: #303f98;
+}
+
+.aviso {
+    margin-top: 25px;
+    color: #71809e;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    margin: 22px 0;
+    border: none;
+    border-radius: 30px;
+    background: #303f98;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4056c5;
+}
+
+.erro {
+    background: #ffe5e5;
+    color: #b42318;
+    padding: 15px;
+    border-radius: 9px;
+    margin: 20px 0;
+}
+
+.container > a {
+    color: #303f98;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .quadras,
+    .campos {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}

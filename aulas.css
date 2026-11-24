@@ -1,0 +1,248 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f6fc;
+    color: #172b4d;
+}
+
+.topo {
+    background: #303f98;
+    color: white;
+    padding: 22px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.topo a {
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 45px auto;
+    padding: 0 25px;
+}
+
+h1 {
+    color: #303f98;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    color: #71809e;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.grade-aulas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.card-aula {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 22px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.foto-professor {
+    width: 170px;
+    min-width: 170px;
+    height: 190px;
+    border-radius: 14px;
+    background-image: url("professores.png");
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+}
+
+.foto-pilates {
+    background-position: left top;
+}
+
+.foto-funcional {
+    background-position: right top;
+}
+
+.foto-spinning {
+    background-position: left bottom;
+}
+
+.foto-alongamento {
+    background-position: right bottom;
+}
+
+.conteudo-aula h2 {
+    color: #303f98;
+    margin-bottom: 8px;
+}
+
+.conteudo-aula h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.conteudo-aula p {
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.horarios {
+    color: #71809e;
+}
+
+.preco {
+    color: #2da44e;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.botao {
+    display: inline-block;
+    background: #303f98;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.botao:hover,
+button:hover {
+    background: #4056c5;
+}
+
+.formulario {
+    background: white;
+    max-width: 700px;
+    margin: 45px auto;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.formulario h1 {
+    margin-bottom: 25px;
+}
+
+.resumo {
+    background: #f3f6fc;
+    padding: 22px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.resumo h2 {
+    color: #303f98;
+    margin-bottom: 15px;
+}
+
+.resumo p {
+    margin-bottom: 10px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin: 18px 0 8px;
+}
+
+form input[type="date"],
+form input[type="number"],
+form select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #dce2f0;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.opcao {
+    display: block;
+    margin: 17px 0;
+    font-weight: normal;
+}
+
+.opcao input {
+    margin-right: 8px;
+}
+
+button {
+    width: 100%;
+    background: #303f98;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.erro {
+    color: #c62828;
+    margin-bottom: 15px;
+}
+
+.sucesso {
+    color: #218838;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.aviso {
+    color: #71809e;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+footer {
+    background: #303f98;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+@media (max-width: 850px) {
+    .grade-aulas {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    .card-aula {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .foto-professor {
+        width: 100%;
+        height: 220px;
+    }
+
+    .formulario {
+        margin: 20px;
+        padding: 22px;
+    }
+}

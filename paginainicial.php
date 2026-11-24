@@ -143,7 +143,7 @@ function h($valor) {
         </article>
     </section>
 
-    <a href="?pagina=aulas" class="botao">Conheça as aulas</a>
+    <a href="aulas.php">Aulas</a>
 
 <?php elseif ($pagina === 'aulas'): ?>
 
@@ -171,6 +171,7 @@ function h($valor) {
 
     </section>
 
+
 <?php elseif ($pagina === 'eventos'): ?>
 
     <h1>Eventos e Campeonatos</h1>
@@ -179,20 +180,48 @@ function h($valor) {
     <section class="lista">
 
         <?php foreach ($eventos as $evento): ?>
+
             <article class="card-evento">
+
                 <div class="icone-evento">
                     <?= h($evento['icone']) ?>
                 </div>
 
                 <div class="info">
                     <h3><?= h($evento['nome']) ?></h3>
-                    <p><?= h($evento['data']) ?> às <?= h($evento['hora']) ?></p>
+
+                    <p>
+                        <?= h($evento['data']) ?>
+                        às <?= h($evento['hora']) ?>
+                    </p>
+
                     <small>Inscrições abertas todos os dias</small>
                 </div>
+
+                <a href="reservas.php" class="botao-reserva-evento">
+                    Reservar horário
+                </a>
+
             </article>
+
         <?php endforeach; ?>
 
     </section>
+
+    <div class="convite-reserva">
+
+        <h2>Jogue com seus amigos!</h2>
+
+        <p>
+            Escolha uma quadra, marque um horário
+            e organize sua partida na SportPlex.
+        </p>
+
+        <a href="reservas.php" class="botao-reserva-evento">
+            Clique aqui para reservar um horário com seus amigos
+        </a>
+
+    </div>
 
     <button class="botao" onclick="alert('Inscrição solicitada!')">
         Clique aqui para se inscrever no próximo evento
@@ -217,10 +246,10 @@ function h($valor) {
 
                 <p class="preco">R$ <?= h($produto['preco']) ?></p>
 
-                <button class="botao"
-                    onclick="alert('Produto adicionado com sucesso ao carrinho!')">
-                    Comprar
-                </button>
+                <a href="pagamento_loja.php?nome=<?= urlencode($produto['nome']) ?>&preco=<?= urlencode($produto['preco']) ?>"
+   class="botao">
+    Comprar
+</a>
             </article>
         <?php endforeach; ?>
 

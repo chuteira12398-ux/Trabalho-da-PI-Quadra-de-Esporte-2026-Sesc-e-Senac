@@ -1,0 +1,93 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f6fc;
+    color: #172b4d;
+    padding: 35px 20px;
+}
+
+.container-pagamento {
+    max-width: 650px;
+    margin: 25px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+}
+
+h1, h2 {
+    color: #303f98;
+    margin-bottom: 20px;
+}
+
+.resumo {
+    background: #f2f5fc;
+    padding: 22px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+}
+
+.resumo p {
+    margin: 12px 0;
+}
+
+form label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 17px 0;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #303f98;
+}
+
+.aviso {
+    color: #71809e;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 30px;
+    background: #303f98;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4056c5;
+}
+
+.mensagem {
+    color: #218838;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+a {
+    color: #303f98;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .container-pagamento {
+        padding: 22px;
+    }
+}

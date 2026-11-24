@@ -38,6 +38,7 @@ $planos = [
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,9 +51,11 @@ $planos = [
 <body>
 
 <header class="cabecalho-planos">
+
     <h1>SP SPORTPLEX</h1>
 
     <a href="paginainicial.php">Voltar ao início</a>
+
 </header>
 
 <main class="container-planos">
@@ -82,19 +85,23 @@ $planos = [
                 </p>
 
                 <ul>
+
                     <?php foreach ($plano["beneficios"] as $beneficio): ?>
+
                         <li>
                             <?= htmlspecialchars($beneficio) ?>
                         </li>
+
                     <?php endforeach; ?>
+
                 </ul>
 
-                <a href="pagamento.php?plano=<?= urlencode(
-    $plano["nome"] === "Plano Básico" ? "Basico" :
-    ($plano["nome"] === "Plano Padrão" ? "Padrao" : "Premium")
-) ?>" class="btn-plano">
-    Escolher plano
-</a>
+                <a href="pagamento.php?nome=<?= urlencode($plano["nome"]) ?>&preco=<?= urlencode($plano["preco"]) ?>"
+                   class="btn-plano">
+
+                    Escolher plano
+
+                </a>
 
             </div>
 
@@ -105,7 +112,9 @@ $planos = [
 </main>
 
 <footer class="rodape-planos">
+
     <p>© 2026 SportPlex. Todos os direitos reservados.</p>
+
 </footer>
 
 </body>

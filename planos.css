@@ -138,3 +138,14 @@ body {
         font-size: 26px;
     }
 }
+
+.cabecalho-planos a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cabecalho-planos a:hover {
+    color: #dce5ff;
+}

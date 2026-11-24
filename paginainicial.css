@@ -467,3 +467,81 @@ footer p {
         padding: 20px;
     }
 }
+
+
+
+/* Botões de acesso rápido */
+.btn-indicador {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #0875d1, #064b91);
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 75, 145, 0.18);
+    transition: all 0.3s ease;
+}
+
+.btn-indicador:hover {
+    background: linear-gradient(135deg, #0964b3, #033969);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px rgba(0, 75, 145, 0.25);
+}
+
+.btn-indicador:active {
+    transform: scale(0.97);
+}
+
+
+/* BOTÕES DE RESERVA DOS EVENTOS */
+
+.card-evento {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.botao-reserva-evento {
+    display: inline-block;
+    background: #303f98;
+    color: white;
+    padding: 13px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.botao-reserva-evento:hover {
+    background: #4056c5;
+    transform: translateY(-3px);
+}
+
+.convite-reserva {
+    background: white;
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+}
+
+.convite-reserva h2 {
+    color: #303f98;
+    margin-bottom: 12px;
+}
+
+.convite-reserva p {
+    color: #71809e;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+    .botao-reserva-evento {
+        width: 100%;
+    }
+}
+

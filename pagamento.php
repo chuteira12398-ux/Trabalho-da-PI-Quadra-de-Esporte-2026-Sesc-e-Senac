@@ -1,42 +1,20 @@
 
 <?php
-require_once "pagamento.php";
+$nome = $_GET["nome"] ?? $_POST["nome"] ?? "";
+$preco = $_GET["preco"] ?? $_POST["preco"] ?? "";
 
-$planos = [
-    [
-        "codigo" => "Basico",
-        "nome" => "Plano Básico",
-        "preco" => "29,99",
-        "descricao" => "Acesso aos recursos básicos.",
-        "beneficios" => [
-            "Acesso à musculação",
-            "Equipamentos básicos",
-            "Suporte ao cliente"
-        ]
-    ],
-    [
-        "codigo" => "Padrao",
-        "nome" => "Plano Padrão",
-        "preco" => "49,99",
-        "descricao" => "Acesso completo a recursos padrão.",
-        "beneficios" => [
-            "Acesso à musculação, natação e aulas em grupo",
-            "Participação em aulas",
-            "Suporte ao cliente"
-        ]
-    ],
-    [
-        "codigo" => "Premium",
-        "nome" => "Plano Premium",
-        "preco" => "79,99",
-        "descricao" => "Acesso total aos recursos premium.",
-        "beneficios" => [
-            "Acesso completo",
-            "Todas as atividades",
-            "Benefícios exclusivos"
-        ]
-    ]
-];
+$mensagem = "";
+$forma = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $forma = $_POST["forma_pagamento"] ?? "";
+
+    if ($forma == "") {
+        $mensagem = "Selecione uma forma de pagamento.";
+    } else {
+        $mensagem = "Pagamento do plano simulado com sucesso!";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -44,61 +22,117 @@ $planos = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planos - SportPlex</title>
-    <link rel="stylesheet" href="planos.css">
+    <title>Pagamento dos Planos - SportPlex</title>
+    <link rel="stylesheet" href="pagamento.css">
 </head>
-
 <body>
 
-<header class="cabecalho-planos">
-    <h1>SP SPORTPLEX</h1>
-    <a href="paginainicial.php">Voltar ao início</a>
-</header>
+<div class="container-pagamento">
 
-<main class="container-planos">
+    <h1>Pagamento do plano</h1>
 
-    <h1 class="titulo-planos">Nossos Planos</h1>
-
-    <p class="descricao-planos">
-        Escolha o plano ideal para você!
-    </p>
-
-    <div class="grade-planos">
-
-        <?php foreach ($planos as $plano): ?>
-
-            <div class="card-plano">
-
-                <h2><?= htmlspecialchars($plano["nome"]) ?></h2>
-
-                <p class="preco-plano">
-                    R$ <?= htmlspecialchars($plano["preco"]) ?>
-                </p>
-
-                <p><?= htmlspecialchars($plano["descricao"]) ?></p>
-
-                <ul>
-                    <?php foreach ($plano["beneficios"] as $beneficio): ?>
-                        <li><?= htmlspecialchars($beneficio) ?></li>
-                    <?php endforeach; ?>
-                </ul>
-
-                <a href="pagamento.php?plano=<?= urlencode($plano["codigo"]) ?>"
-                   class="btn-plano">
-                    Escolher plano
-                </a>
-
-            </div>
-
-        <?php endforeach; ?>
-
+    <div class="resumo">
+        <h2>Resumo do pedido</h2>
+        <p>Plano: <?= htmlspecialchars($nome) ?></p>
+        <p>Preço: R$ <?= htmlspecialchars($preco) ?></p>
     </div>
 
-</main>
+    <form method="POST" action="pagamento.php">
 
-<footer class="rodape-planos">
-    <p>© 2026 SportPlex. Todos os direitos reservados.</p>
-</footer>
+        <input type="hidden" name="nome" value="<?= htmlspecialchars($nome) ?>">
+        <input type="hidden" name="preco" value="<?= htmlspecialchars($preco) ?>">
+
+        <h2>Forma de pagamento</h2>
+
+        <label>
+            <input type="radio" name="forma_pagamento" value="PIX"
+                <?= $forma == "PIX" ? "checked" : "" ?>
+                onclick="mostrarPagamento('pix')">
+            PIX
+        </label>
+
+        <label>
+            <input type="radio" name="forma_pagamento" value="Cartão de crédito"
+                <?= $forma == "Cartão de crédito" ? "checked" : "" ?>
+                onclick="mostrarPagamento('credito')">
+            Cartão de crédito
+        </label>
+
+        <label>
+            <input type="radio" name="forma_pagamento" value="Cartão de débito"
+                <?= $forma == "Cartão de débito" ? "checked" : "" ?>
+                onclick="mostrarPagamento('debito')">
+            Cartão de débito
+        </label>
+
+        <div id="pix" class="detalhes"
+            style="display: <?= $forma == "PIX" ? "block" : "none" ?>;">
+            <h3>Pagamento por PIX</h3>
+            <p>QR Code ilustrativo para demonstração escolar.</p>
+            <div class="qrcode">PIX<br>SPORTPLEX</div>
+        </div>
+
+        <div id="credito" class="detalhes"
+            style="display: <?= $forma == "Cartão de crédito" ? "block" : "none" ?>;">
+            <h3>Cartão de crédito</h3>
+            <p>Campos fictícios para demonstração.</p>
+
+            <label>Número fictício do cartão</label>
+            <input type="text" placeholder="0000 0000 0000 0000"
+                autocomplete="off">
+
+            <label>Nome fictício do titular</label>
+            <input type="text" placeholder="NOME DE EXEMPLO"
+                autocomplete="off">
+
+            <label>Validade fictícia</label>
+            <input type="text" placeholder="MM/AA" autocomplete="off">
+
+            <label>Código fictício</label>
+            <input type="text" placeholder="000" autocomplete="off">
+        </div>
+
+        <div id="debito" class="detalhes"
+            style="display: <?= $forma == "Cartão de débito" ? "block" : "none" ?>;">
+            <h3>Cartão de débito</h3>
+            <p>Campos fictícios para demonstração.</p>
+
+            <label>Número fictício do cartão</label>
+            <input type="text" placeholder="0000 0000 0000 0000"
+                autocomplete="off">
+
+            <label>Nome fictício do titular</label>
+            <input type="text" placeholder="NOME DE EXEMPLO"
+                autocomplete="off">
+
+            <label>Validade fictícia</label>
+            <input type="text" placeholder="MM/AA" autocomplete="off">
+
+            <label>Código fictício</label>
+            <input type="text" placeholder="000" autocomplete="off">
+        </div>
+
+        <button type="submit">Confirmar pagamento</button>
+
+    </form>
+
+    <?php if ($mensagem != ""): ?>
+        <p class="mensagem"><?= htmlspecialchars($mensagem) ?></p>
+    <?php endif; ?>
+
+    <a href="planos.php">Voltar para os planos</a>
+
+</div>
+
+<script>
+function mostrarPagamento(tipo) {
+    document.getElementById("pix").style.display = "none";
+    document.getElementById("credito").style.display = "none";
+    document.getElementById("debito").style.display = "none";
+
+    document.getElementById(tipo).style.display = "block";
+}
+</script>
 
 </body>
 </html>
