@@ -216,7 +216,7 @@ $hoje = date("Y-m-d");
 
     </form>
 
-    <a href="pagina.php?pagina=eventos">
+    <a href="paginainicial.php?pagina=eventos">
         Voltar para os eventos
     </a>
 

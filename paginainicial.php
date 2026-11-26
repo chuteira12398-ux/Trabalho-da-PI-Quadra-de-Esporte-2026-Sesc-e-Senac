@@ -223,10 +223,6 @@ function h($valor) {
 
     </div>
 
-    <button class="botao" onclick="alert('Inscrição solicitada!')">
-        Clique aqui para se inscrever no próximo evento
-    </button>
-
 <?php elseif ($pagina === 'loja'): ?>
 
     <h1>Loja SportPlex</h1>
@@ -267,27 +263,9 @@ function h($valor) {
         </div>
     </section>
 
-    <h2 class="titulo-secao">Faça sua reserva</h2>
-
-
-    <form method="POST" class="formulario">
-
-        <label>Selecione a dia e o mês</label>
-        <input type="date" name="data" required>
-
-        <label>Selecione o horário para o seu almoço ou jantar</label>
-        <select name="horario" required>
-            <option value="">Escolha um horário</option>
-            <option value="12:00">12:00 - 15:00</option>
-            <option value="15:00">15:00 - 18:00</option>
-            <option value="19:00">19:00 - 22:00</option>
-        </select>
-
-        <h2>R$ 100,00</h2>
-
-        <button type="submit" class="botao">
-            Reservar Espaço Gourmet
-        </button>
+        <a href="reserva_gourmet.php" class="botao">
+    Clique aqui para você reservar o seu Espaço Gourmet
+</a>
 
         <?php if ($mensagem): ?>
             <p class="mensagem"><?= h($mensagem) ?></p>
@@ -298,7 +276,7 @@ function h($valor) {
 <?php else: ?>
 
     <h1>Página não encontrada</h1>
-    <a href="?pagina=academia" class="botao">Voltar ao início</a>
+    <a href="paginainicial.php?pagina=academia" class="botao">Voltar ao início</a>
 
 <?php endif; ?>
 

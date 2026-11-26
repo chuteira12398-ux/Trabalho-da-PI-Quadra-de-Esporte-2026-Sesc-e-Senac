@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p class="mensagem"><?= htmlspecialchars($mensagem) ?></p>
     <?php endif; ?>
 
-    <a href="pagina.php?pagina=loja">Voltar para a loja</a>
+    <a href="paginainicial.php?pagina=loja">Voltar para a loja</a>
 
 </div>
 

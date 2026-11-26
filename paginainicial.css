@@ -545,3 +545,20 @@ footer p {
     }
 }
 
+.menu {
+    display: flex;
+    align-items: center;
+    background: #303f98;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 18px 25px;
+    display: block;
+}
+
+.menu a:hover {
+    background: #25347f;
+}
+

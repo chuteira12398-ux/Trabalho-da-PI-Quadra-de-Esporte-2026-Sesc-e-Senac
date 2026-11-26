@@ -50,9 +50,9 @@ $aulas = [
     <h2>SP SPORTPLEX</h2>
 
     <nav>
-        <a href="pagina.php">Início</a>
-        <a href="pagina.php?pagina=loja">Loja</a>
-        <a href="pagina.php?pagina=eventos">Eventos</a>
+        <a href="paginainicial.php">Início</a>
+        <a href="paginainicial.php?pagina=loja">Loja</a>
+        <a href="paginainicial.php?pagina=eventos">Eventos</a>
     </nav>
 </header>
 
@@ -103,7 +103,7 @@ $aulas = [
 </main>
 
 <footer>
-    2026 SportPlex | Todos os direitos reservados.
+    2026 SportPlex | Trabalho escolar
 </footer>
 
 </body>
